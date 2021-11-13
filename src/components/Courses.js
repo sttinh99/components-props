@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Course from './Course';
+import HOCs from './HOCs';
 
-export default function Courses({ item }) {
-    console.log(item);
+function Courses({ item, name = "B" }) {
     return (
         <div className="container">
             <h3>{item.type}</h3>
@@ -19,9 +19,10 @@ export default function Courses({ item }) {
 }
 
 Courses.propTypes = {
-    course: PropTypes.object
+    item: PropTypes.object
 };
 
 Courses.defaultProps = {
-    course: {}
+    item: {}
 }
+export default HOCs(Courses)
